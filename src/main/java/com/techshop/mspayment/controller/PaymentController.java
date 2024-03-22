@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
-
 @RestController
 @RequestMapping(value = "/payment")
 public class PaymentController {
@@ -17,7 +15,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<PaymentDTO> findById(@PathVariable UUID id) {
+    public ResponseEntity<PaymentDTO> findById(@PathVariable Long id) {
         Payment payment = paymentService.findById(id);
         return ResponseEntity.ok().body(new PaymentDTO(payment));
     }

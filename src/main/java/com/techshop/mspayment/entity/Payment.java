@@ -2,29 +2,27 @@ package com.techshop.mspayment.entity;
 
 import jakarta.persistence.*;
 
-import java.util.UUID;
-
 @Entity
 @Table(name = "tb_payment")
 public class Payment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private PaymentStatus status;
 
     private PaymentMethod method;
 
-    private UUID userId;
+    private Long userId;
 
     private Double value;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -40,15 +38,15 @@ public class Payment {
         return method;
     }
 
-    public void setMethod(PaymentMethod paymentMethod) {
-        this.method = paymentMethod;
+    public void setMethod(PaymentMethod method) {
+        this.method = method;
     }
 
-    public UUID getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(UUID userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -59,8 +57,4 @@ public class Payment {
     public void setValue(Double value) {
         this.value = value;
     }
-
-    public Payment() {
-    }
-
 }

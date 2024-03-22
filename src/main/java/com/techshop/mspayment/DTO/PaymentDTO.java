@@ -6,26 +6,22 @@ import com.techshop.mspayment.entity.PaymentStatus;
 
 import jakarta.validation.constraints.NotNull;
 
-
-import java.util.UUID;
-
 public class PaymentDTO {
 
-    private UUID id;
+    private Long id;
 
-    @NotNull
     private PaymentStatus status;
 
     @NotNull
     private PaymentMethod method;
 
     @NotNull
-    private UUID userId;
+    private Long userId;
 
     @NotNull
     private Double value;
 
-    public PaymentDTO(PaymentStatus status, PaymentMethod method, UUID userId, Double value) {
+    public PaymentDTO(PaymentStatus status, PaymentMethod method, Long userId, Double value) {
         this.status = status;
         this.method = method;
         this.userId = userId;
@@ -40,11 +36,11 @@ public class PaymentDTO {
         this.value = payment.getValue();
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -64,11 +60,11 @@ public class PaymentDTO {
         this.method = method;
     }
 
-    public UUID getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(UUID userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
