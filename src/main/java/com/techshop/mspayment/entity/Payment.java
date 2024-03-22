@@ -48,8 +48,8 @@ public class Payment {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = UUID.fromString(userId);
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
 
     public Double getValue() {
